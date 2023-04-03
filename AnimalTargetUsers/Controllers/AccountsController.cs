@@ -2,7 +2,6 @@ using AnimalTargetUsers.DBWork;
 using AnimalTargetUsers.UserData;
 using DBDatas;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AnimalTargetUsers.Controllers;
 
@@ -28,8 +27,6 @@ public class AccountsController : Controller
         if (id <= 0)
             return BadRequest();
 
-        //User? user = await _usersDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
-        
         User? user = await _usersDbContext.Users.FindAsync(id);
         
         if (user!=null)
@@ -75,16 +72,13 @@ public class AccountsController : Controller
             users = users.Where(user => user.LastName.ToLower().Contains(lastName));
         }
 
-        //IQueryable<UserResponse> usersOut = users.Cast<UserResponse>().Take(new Range(from, from + size));
-        var usersOut = users/*.Take(new Range(from, from + size))*/
-            .Select(user => new UserResponse()
-            {
-                Id = user.Id,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Email = user.Email
-            })/*.ToListAsync()*/;
-        //usersOut = usersOut.Take(new Range(from, from + size)).ToList();
-        return Ok(usersOut.ToList().Take(new Range(from, from + size)));
+        IQueryable<UserResponse> usersOut = users.Select(user => new UserResponse()
+        {
+            Id = user.Id,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email
+        }).Skip(from).Take(size);
+        return Ok(usersOut);
     }
 }
