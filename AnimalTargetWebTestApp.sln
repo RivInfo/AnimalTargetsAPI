@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalTargetWebTestApp", "AnimalTargetWebTestApp\AnimalTargetWebTestApp.csproj", "{AB279C63-9362-4234-B2EE-91965AB1F0FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalTargetUsers", "AnimalTargetUsers\AnimalTargetUsers.csproj", "{21D3496D-622C-416A-9D2D-6C1EE834BD3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDatas", "DBDatas\DBDatas.csproj", "{936929D3-D1D0-45C9-BA5C-903C4DA88E2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB279C63-9362-4234-B2EE-91965AB1F0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB279C63-9362-4234-B2EE-91965AB1F0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB279C63-9362-4234-B2EE-91965AB1F0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB279C63-9362-4234-B2EE-91965AB1F0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D3496D-622C-416A-9D2D-6C1EE834BD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D3496D-622C-416A-9D2D-6C1EE834BD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D3496D-622C-416A-9D2D-6C1EE834BD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D3496D-622C-416A-9D2D-6C1EE834BD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936929D3-D1D0-45C9-BA5C-903C4DA88E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936929D3-D1D0-45C9-BA5C-903C4DA88E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936929D3-D1D0-45C9-BA5C-903C4DA88E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936929D3-D1D0-45C9-BA5C-903C4DA88E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

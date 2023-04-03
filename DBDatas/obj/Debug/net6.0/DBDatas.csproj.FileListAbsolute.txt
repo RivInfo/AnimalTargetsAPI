@@ -1,0 +1,12 @@
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\bin\Debug\net6.0\DBDatas.deps.json
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\bin\Debug\net6.0\DBDatas.dll
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\bin\Debug\net6.0\DBDatas.pdb
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.csproj.AssemblyReference.cache
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.AssemblyInfoInputs.cache
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.AssemblyInfo.cs
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.csproj.CoreCompileInputs.cache
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.dll
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\refint\DBDatas.dll
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\DBDatas.pdb
+C:\Users\romai\RiderProjects\AnimalTargetWebTestApp\DBDatas\obj\Debug\net6.0\ref\DBDatas.dll
