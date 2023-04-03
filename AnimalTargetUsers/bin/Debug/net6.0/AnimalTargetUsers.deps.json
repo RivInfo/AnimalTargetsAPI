@@ -229,6 +229,9 @@
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "DBDatas/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.0-preview.2.23128.3"
+        },
         "runtime": {
           "DBDatas.dll": {}
         }

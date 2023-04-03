@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "d1Y0Obh5j6D+LuqmfV7q1S4Slkbr+LC+ZdODfmkiN6Wx3sxCRi8FMnb2toKk/2mON/oXHKQNzrKgux+HmtB6eQ==",
+  "dgSpecHash": "rhsQKqqt+O1tMchhKlv5D1FDLoFhhQ4sReR99PpJuZvh1r5GUkUZPVdo6Y7v2gIduXm3k0jwmIUDSyb6LJOFTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\romai\\RiderProjects\\AnimalTargetWebTestApp\\DBDatas\\DBDatas.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\romai\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512"
+  ],
   "logs": []
 }

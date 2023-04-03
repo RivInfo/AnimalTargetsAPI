@@ -1,7 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace DBDatas;
 
+[Index(nameof(Email), IsUnique = true)]
+[Index(nameof(FirstName)), Index(nameof(LastName))]
 public class User
 {
     [Column("id")]

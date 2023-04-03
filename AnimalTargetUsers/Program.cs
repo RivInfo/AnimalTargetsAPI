@@ -1,4 +1,3 @@
-using AnimalTargetUsers.BackgroundServices;
 using AnimalTargetUsers.DBWork;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -21,7 +21,7 @@ public class RegistrationController : ControllerBase
         _usersDbContext = usersDbContext;
     }
 
-    [HttpGet("user{id:long} {password}")]
+    /*[HttpGet("user{id:long} {password}")]
     public async Task<ActionResult<User>> GetById(long id, string password)
     {
         User user = _usersDbContext.Users.FirstOrDefault(user => user.Id == id);
@@ -39,7 +39,7 @@ public class RegistrationController : ControllerBase
         }
 
         return NotFound();
-    }
+    }*/
     
     [HttpGet]
     public async Task<ActionResult<User>> GetAll()
@@ -68,8 +68,8 @@ public class RegistrationController : ControllerBase
                 LastName = userRequest.LastName,
                 Email = userRequest.Email
             });
-
-            user.Entity.Password = new PasswordHasher<User>().HashPassword(user.Entity, userRequest.Password);
+            // в целом тут это делать бессмысленно. Выше HashPassword(new User(), userRequest.Password) будет ок
+            user.Entity.Password = new PasswordHasher<User>().HashPassword(user.Entity, userRequest.Password); 
             
             await _usersDbContext.SaveChangesAsync();
             
