@@ -8,14 +8,14 @@ namespace DBDatas;
 [Index(nameof(FirstName)), Index(nameof(LastName))]
 public class User
 {
-    [Column("id")]
+    [Column("id"), Key]
     public long Id { get; set; }
-    [Column("firstName")]
+    [Column("firstName"), Required]
     public string FirstName { get; set; }
-    [Column("lastName")]
+    [Column("lastName"), Required]
     public string LastName { get; set; }
-    [Column("email")]
+    [Column("email"), Required]
     public string Email { get; set; }
-    [Column("password")]
+    [Column("password"), Required]
     public string Password { get; set; }
 }

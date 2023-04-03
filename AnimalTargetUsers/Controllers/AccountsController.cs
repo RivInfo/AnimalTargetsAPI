@@ -1,7 +1,9 @@
 using AnimalTargetUsers.DBWork;
 using AnimalTargetUsers.UserData;
 using DBDatas;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AnimalTargetUsers.Controllers;
 
@@ -16,6 +18,79 @@ public class AccountsController : Controller
     {
         _logger = logger;
         _usersDbContext = usersDbContext;
+    }
+
+    [HttpDelete("{id:long}")]
+    public async Task<ActionResult<UserResponse>> Delete(long id)
+    {
+        /*if (!HttpContext.User.Identity.IsAuthenticated)
+    return Unauthorized();*/
+        
+        //Удаление не своего акка
+        
+        //аккаунт связан с животным
+        if (id <= 0)
+        {
+            return BadRequest();
+        }
+
+        User? user = await _usersDbContext.Users.FindAsync(id);
+
+        if (user != null)
+        {
+            _usersDbContext.Users.Remove(user);
+            await _usersDbContext.SaveChangesAsync();
+            return Ok();
+        }
+        else
+        {
+            return StatusCode(403);
+        }
+    }
+
+    [HttpPut("{id:long}")]
+    public async Task<ActionResult<UserResponse>> Update(long id, UserRequest userRequest)
+    {
+        /*if (!HttpContext.User.Identity.IsAuthenticated)
+            return Unauthorized();*/
+        
+        //обновление не своего акка
+
+        if (ModelState.IsValid)
+        {
+            User? user = await _usersDbContext.Users.FirstOrDefaultAsync(user => user.Email == userRequest.Email);
+            if (user != null)
+            {
+                return StatusCode(409);
+            }
+            
+            user = await _usersDbContext.Users.FindAsync(id);
+
+            if (user != null)
+            {
+                user.Email = userRequest.Email;
+                user.FirstName = userRequest.FirstName;
+                user.LastName = userRequest.LastName;
+                user.Password = new PasswordHasher<User>().HashPassword(user, userRequest.Password);
+                
+                await _usersDbContext.SaveChangesAsync();
+                return Ok(new UserResponse()
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email
+                });
+            }
+            else
+            {
+                return StatusCode(403);
+            }
+        }
+        else
+        {
+            return BadRequest();
+        }
     }
 
     [HttpGet("{id:long}")]
@@ -78,7 +153,8 @@ public class AccountsController : Controller
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email
-        }).Skip(from).Take(size);
+        }).OrderBy(user => user.Id).Skip(from).Take(size);
+        
         return Ok(usersOut);
     }
 }
